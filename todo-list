@@ -1,0 +1,20 @@
+#! /usr/bin/env python3
+
+
+def list_todo_list():
+    with open('todo.txt', 'r') as todo_file:
+        tasks = todo_file.readlines()
+    
+
+    for counter, task in enumerate(tasks):
+        t = task.split('    ')
+        todo = t[0]
+        created = t[1]
+        completed = t[2][:-1] if len(t)>2 else None
+        print("{:3d} {}\nCreated: {}".format(counter+1, todo, created))
+        if completed:
+             print("Completed: {}\n".format(completed))
+
+
+if __name__ == '__main__':
+    list_todo_list()

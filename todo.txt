@@ -1,0 +1,5 @@
+finish up with shell scripts    2019-11-04 13:28:19.281280    2019-11-05 13:46:03.677292
+Modify Tic-tac-toe to give it visual enhancements    2019-11-04 13:32:23.563646 
+Complete reading on the OSI model from TCP onwards    2019-11-04 15:12:09.058162 
+To be deleted    2019-11-05 11:45:38.206157    2019-11-05 13:16:08.918930
+Level up on python from intermediate to expert    2019-11-05 13:49:43.795581 

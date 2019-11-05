@@ -1,0 +1,29 @@
+#! /usr/bin/env python3
+
+
+import os
+import sys
+import time
+from datetime import datetime
+
+def mark_task_as_done(counter):
+    with open('todo.txt', 'r') as old_file:
+        tasks = old_file.readlines()
+    with open('todo.txt.new', 'w+') as new_file:
+        for ctr, task in enumerate(tasks):
+            number = ctr+1
+            if number != counter:
+                new_file.write(f"{task}")
+            else:
+                task = task[:-2]
+                now = datetime.fromtimestamp(time.time())       
+                todo_update = f"{task}    {now}\n"
+                new_file.write(todo_update)
+                todo, created, completed = todo_update.split("    ")
+                print(f"{number:3d} {todo}\nCreated: {created}\nCompleted: {completed}")
+    # replace todo.txt with todo.txt.new
+    os.replace("todo.txt.new", "todo.txt")
+
+if __name__ == '__main__':
+    task = int(sys.argv[1])
+    mark_task_as_done(task)
